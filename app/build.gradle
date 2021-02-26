@@ -1,0 +1,15 @@
+plugins {
+    id 'application'
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+}
+
+application {
+    // Define the main class for the application.
+    mainClass = 'Guitar.Keyboard.Controller.Driver'
+}
