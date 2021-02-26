@@ -16,6 +16,7 @@ public class Tuner {
     private final double freqMax = 349.228;
 
     private KeyboardController controller;
+    private final int MIN_AMPL = 1;
 
     public Tuner(KeyboardController controller) {
         this.controller = controller;
@@ -50,7 +51,7 @@ public class Tuner {
                         }
                     }
 
-                    if (maxAmpl > 0.1) {
+                    if (maxAmpl > MIN_AMPL) {
                         double curFreq = maxIndex / DIVI;
                         Notes notes = new Notes();
                         boolean found = false;
@@ -58,7 +59,7 @@ public class Tuner {
                         if (!found) {
                             for (double d : notes.E) {
                                 if (Math.abs(curFreq - d) <= 4) {
-                                    System.out.print("Moving right (E, ");
+                                    System.out.print("Moving forward (E, ");
                                     controller.pressW();
                                     found = true;
                                     break;
