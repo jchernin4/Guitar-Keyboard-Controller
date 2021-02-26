@@ -10,7 +10,7 @@ import javax.sound.sampled.TargetDataLine;
 public class Tuner {
     private final double DIVI = 8.192;
     private final int SAMPLE_SIZE = 8192;
-    private final int SPECTRE_SIZE = 32768; // sampleSize * 2 * 2;
+    private final int SPECTRE_SIZE = SAMPLE_SIZE * 4;
 
     private final double freqMin = 77.781;
     private final double freqMax = 349.228;
