@@ -13,3 +13,14 @@ application {
     // Define the main class for the application.
     mainClass = 'Guitar.Keyboard.Controller.Driver'
 }
+
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Implementation-Title': 'Guitar-Keyboard-Controller',
+        	'Implementation-Version': '1.0',
+        	'Main-Class': 'Guitar.Keyboard.Controller.Driver'
+    }
+    baseName = project.name + '-all'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
