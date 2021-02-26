@@ -16,7 +16,7 @@ public class Tuner {
     private final double freqMax = 349.228;
 
     private KeyboardController controller;
-    private final int MIN_AMPL = 1;
+    private final double MIN_AMPL = 1.0;
 
     public Tuner(KeyboardController controller) {
         this.controller = controller;
